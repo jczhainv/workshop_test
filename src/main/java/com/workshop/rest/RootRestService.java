@@ -11,7 +11,7 @@ import java.util.Set;
 
 // @ApplicationPath is mandatory.
 // servlet.mapping.prefix defined in web.xml and URL has to be match with @ApplicationPath value
-@ApplicationPath("/")
+@ApplicationPath("/rest")
 public class RootRestService extends Application {
 
     @Override
@@ -19,6 +19,7 @@ public class RootRestService extends Application {
         // Don't define class type, so we can inject more classes
         Set<Class<?>> classes = new HashSet<Class<?>>();
         classes.add(TestService.class);
+        classes.add(MyService.class);
         return classes;
     }
 }
